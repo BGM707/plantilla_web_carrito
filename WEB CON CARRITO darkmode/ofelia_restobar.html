@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>201 BAR</title>
+
+    <!-- Enlace a la hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Animaciones AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Encabezado con logo y bienvenida -->
+    <header>
+        <img src="img/logo 201 .jpg" alt="Logo de 201 BAR" class="background-logo">
+        <div class="header-content">
+            <h1>201 <br> BAR</h1>
+            <div class="subtitle">Ricardo Vicuña #1233</div>
+            <div class="subtitle welcome-message" id="welcome"></div>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="#reservationForm" id="reserveBtn" class="cta-button">Reservar</a></li>
+            <li><a href="#especiales" class="cta-button">Pedidos Especiales</a></li>
+            <li><a href="#bebestibles" class="cta-button">Bebestibles</a></li>
+            <li><a href="#clasicos" class="cta-button">Clásicos</a></li>
+            <li><button id="themeToggleBtn" class="cta-button">🌙</button></li> <!-- Botón de modo oscuro -->
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección de bienvenida y formulario de reserva -->
+        <section id="bienvenida" class="section" data-aos="fade-up">
+            <h2>201 PARA TI!</h2>
+            <a href="#reservationForm" id="openReserveBtn" class="cta-button">Porque eres especial, te mereces algo especial 🫵🏼🤎</a>
+
+            <div id="reservationForm" class="reservation-form" style="display:none;">
+                <h3>Formulario de Reserva</h3>
+                <form id="reserveForm">
+                    <div class="form-group">
+                        <label for="name">Nombre completo:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Fecha de reserva:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Hora de reserva:</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Número de personas:</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Seleccione</option>
+                            <option value="1">1 persona</option>
+                            <option value="2">2 personas</option>
+                            <option value="3">3 personas</option>
+                            <option value="4">4 personas</option>
+                            <option value="5">5 personas</option>
+                            <option value="6">6 o más personas</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Reserva</button>
+                </form>
+                <button id="closeFormBtn">Cerrar</button>
+            </div>
+        </section>
+
+        <!-- Sección de platos para compartir -->
+        <section id="para-compartir" class="section" data-aos="fade-up">
+            <h2>PARA COMPARTIR... O QUIZÁS NO.</h2>
+
+            <div class="menu-item">
+                <h3>CARPACCIO DE RES</h3>
+                <p>Finas láminas de res, emulsión de alcaparras, cebolla encurtida, queso Grana Padano, semillas de mostaza</p>
+                <p><strong>$13.990</strong></p>
+                <button class="add-to-cart" data-name="Carpaccio de Res" data-price="13990">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>CAMARÓN AL PIL PIL</h3>
+                <p>Camarones al ajillo, cacho de cabra y tostadas</p>
+                <p><strong>$11.990</strong></p>
+                <button class="add-to-cart" data-name="Camarón al Pil Pil" data-price="11990">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>CROQUETAS DE CHUPE DE JAIBA</h3>
+                <p>5 croquetas montadas en crema de ají amarillo</p>
+                <p><strong>$8.500</strong></p>
+                <button class="add-to-cart" data-name="Croquetas de Chupe de Jaiba" data-price="8500">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>TARTAR DE RES</h3>
+                <p>150g de filete acompañado de encurtidos y tostadas</p>
+                <p><strong>$15.990</strong></p>
+                <button class="add-to-cart" data-name="Tartar de Res" data-price="15990">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>TARTAR DE ATÚN ACEVICHADO</h3>
+                <p>Tártaro de atún con palta y tostadas</p>
+                <p><strong>$11.990</strong></p>
+                <button class="add-to-cart" data-name="Tartar de Atún Acevichado" data-price="11990">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>TIRADITO DE SALMÓN</h3>
+                <p>Finos cortes de salmón sobre leche de tigre de ají amarillo</p>
+                <p><strong>$13.990</strong></p>
+                <button class="add-to-cart" data-name="Tiradito de Salmón" data-price="13990">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>LOMO VETADO</h3>
+                <p>Tiras de lomo vetado acompañado de chimichurri ahumado</p>
+                <p><strong>$14.990</strong></p>
+                <button class="add-to-cart" data-name="Lomo Vetado" data-price="14990">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>TACOS AL PASTOR</h3>
+                <p>4 tacos con cebolla encurtida, guacamole, chipotle y piña asada</p>
+                <p><strong>$9.990</strong></p>
+                <button class="add-to-cart" data-name="Tacos al Pastor" data-price="9990">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>CEVICHE ITACHI</h3>
+                <p>Ceviche de salmón y camarón con mix de pimientos y leche de tigre</p>
+                <p><strong>$12.900</strong></p>
+                <button class="add-to-cart" data-name="Ceviche Itachi" data-price="12900">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>CAMARONES APANADOS</h3>
+                <p>8 camarones apanados al panko con salsa acevichada</p>
+                <p><strong>$8.500</strong></p>
+                <button class="add-to-cart" data-name="Camarones Apanados" data-price="8500">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>LA HAMBURGUESA DE 201</h3>
+                <p>Doble carne smash, queso mantecoso, tomate seco confitado, rúcula, mayo de albahaca</p>
+                <p><strong>$13.990</strong></p>
+                <button class="add-to-cart" data-name="Hamburguesa de 201" data-price="13990">Agregar al carrito</button>
+            </div>
+        </section>
+
+        <!-- Sección de cócteles especiales -->
+        <section id="bebestibles" class="section" data-aos="fade-up">
+            <h2>CÓCTELES 201</h2>
+
+            <div class="menu-item">
+                <h3>Chambord Spritz</h3>
+                <p>Espumante, Chambord, soda, y frutos rojos</p>
+                <p><strong>$7.500</strong></p>
+                <button class="add-to-cart" data-name="Chambord Spritz" data-price="7500">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>Disaronno Spritz</h3>
+                <p>Disaronno, jugo de naranja, limón, Jack Daniel’s, espumante y soda</p>
+                <p><strong>$7.500</strong></p>
+                <button class="add-to-cart" data-name="Disaronno Spritz" data-price="7500">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>St. Germain Spritz</h3>
+                <p>St. Germain, espumante Brut, limón, tónica, decorado con rodajas de naranja y menta</p>
+                <p><strong>$7.990</strong></p>
+                <button class="add-to-cart" data-name="St. Germain Spritz" data-price="7990">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>Ramazzotti Spritz</h3>
+                <p>Ramazzotti, espumante, soda, frutos rojos y menta</p>
+                <p><strong>$6.000</strong></p>
+                <button class="add-to-cart" data-name="Ramazzotti Spritz" data-price="6000">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>Aperol Spritz</h3>
+                <p>Aperol, espumante, soda con agregado de naranja</p>
+                <p><strong>$6.000</strong></p>
+                <button class="add-to-cart" data-name="Aperol Spritz" data-price="6000">Agregar al carrito</button>
+            </div>
+        </section>
+
+        <!-- Sección de los clásicos -->
+        <section id="clasicos" class="section" data-aos="fade-up">
+            <h2>LOS CLÁSICOS DE 201</h2>
+
+            <div class="menu-item">
+                <h3>Pisco Sour Peruano Catedral</h3>
+                <p>Limón sutil, syrup especiado, albumina, pisco Tres Erres</p>
+                <p><strong>$6.500</strong></p>
+                <button class="add-to-cart" data-name="Pisco Sour Peruano" data-price="6500">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>Disaronno Sour</h3>
+                <p>Disaronno, Jack N°7, limón, syrup simple</p>
+                <p><strong>$7.500</strong></p>
+                <button class="add-to-cart" data-name="Disaronno Sour" data-price="7500">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>Rusty Nail</h3>
+                <p>Jack N°7, Drambuie, decorado con cáscaras de naranja y marrasquino</p>
+                <p><strong>$7.800</strong></p>
+                <button class="add-to-cart" data-name="Rusty Nail" data-price="7800">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>Daiquiri</h3>
+                <p>Ron, limón, syrup, sabor a elección</p>
+                <p><strong>$5.490</strong></p>
+                <button class="add-to-cart" data-name="Daiquiri" data-price="5490">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>Tequila Margarita</h3>
+                <p>Tequila, triple sec, limón, syrup y borde de copa con sal</p>
+                <p><strong>$6.200</strong></p>
+                <button class="add-to-cart" data-name="Tequila Margarita" data-price="6200">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>Whiskey Sour</h3>
+                <p>Jack N°7, limón, syrup</p>
+                <p><strong>$6.800</strong></p>
+                <button class="add-to-cart" data-name="Whiskey Sour" data-price="6800">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>Negroni</h3>
+                <p>Gin, vermouth rosso, Campari</p>
+                <p><strong>$7.000</strong></p>
+                <button class="add-to-cart" data-name="Negroni" data-price="7000">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <h3>Gin Tonic</h3>
+                <p>Gin, hielo, tónica</p>
+                <p><strong>$6.990</strong></p>
+                <button class="add-to-cart" data-name="Gin Tonic" data-price="6990">Agregar al carrito</button>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2024 201 BAR. Todos los derechos reservados.</p>
+        <div id="qrcode"></div>
+    </footer>
+
+    <!-- Carrito de compras -->
+    <div id="cart" class="cart">
+        <h3>Carrito de Compras</h3>
+        <ul id="cartItems"></ul>
+        <p>Total: $<span id="cartTotal">0.00</span></p>
+        <p>Cantidad de Productos: <span id="cartCount">0</span></p> <!-- Añadir este elemento -->
+        <button id="checkoutBtn">Finalizar Compra</button>
+    </div>
+    <button id="cartToggleBtn">🛒</button>
+
+    <!-- Scripts para las animaciones, código QR y funcionalidad del carrito -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Script para cambiar tema -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const body = document.body;
+
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            if (body.classList.contains('dark-theme')) {
+                themeToggleBtn.innerHTML = '☀️'; // Cambia el icono a sol
+            } else {
+                themeToggleBtn.innerHTML = '🌙'; // Cambia el icono a luna
+            }
+        });
+    </script>
+
+</body>
+
+</html>
